@@ -1,0 +1,6 @@
+E:\Usuarios\rpame\Descargas\wpfapplab-06-master\Entity\bin\Debug\Entity.dll
+E:\Usuarios\rpame\Descargas\wpfapplab-06-master\Entity\bin\Debug\Entity.pdb
+E:\Usuarios\rpame\Descargas\wpfapplab-06-master\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+E:\Usuarios\rpame\Descargas\wpfapplab-06-master\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+E:\Usuarios\rpame\Descargas\wpfapplab-06-master\Entity\obj\Debug\Entity.dll
+E:\Usuarios\rpame\Descargas\wpfapplab-06-master\Entity\obj\Debug\Entity.pdb
