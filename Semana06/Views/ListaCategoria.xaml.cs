@@ -10,21 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Business;
 using Entity;
+using Semana06.ViewModel;
 
-namespace Semana06
+namespace Semana06.Views
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para ListaCategoria.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ListaCategoria : Window
     {
-        public MainWindow()
+        ListaCategoriaViewModel viewModel;
+        public ListaCategoria()
         {
             InitializeComponent();
+            viewModel = new ListaCategoriaViewModel();
+            this.DataContext = viewModel;
         }
 
         private void BtnConsultar_Click(object sender, RoutedEventArgs e)
@@ -40,7 +43,7 @@ namespace Semana06
                 BCategoria = new BCategoria();
                 dgvCategoria.ItemsSource = BCategoria.Listar(0);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Comunicarse con el Administrador");
             }
@@ -50,7 +53,7 @@ namespace Semana06
             }
         }
 
-       
+        
 
        
     }

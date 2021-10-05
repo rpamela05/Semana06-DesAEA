@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Business;
+using Entity;
+using Semana06.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,36 +14,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Entity;
-using Business;
 
-namespace Semana06
+namespace Semana06.Views
 {
     /// <summary>
     /// Lógica de interacción para ManCategoria.xaml
     /// </summary>
     public partial class ManCategoria : Window
     {
+        ManCategoriaViewModel viewModel;
         public int ID { get; set; }
         public int NewId { get; set; }
 
-        public ManCategoria(int Id, int newId = 0)
+        public ManCategoria()
         {
             InitializeComponent();
-            ID = Id;
-            NewId = newId;
-            if (ID > 0 && NewId == 0)
-            {
-                BCategoria bCategoria = new BCategoria();
-                List<Categoria> categorias = new List<Categoria>();
-                categorias = bCategoria.Listar(ID);
-                if (categorias.Count > 0)
-                {
-                    lblId.Content = categorias[0].IdCategoria.ToString();
-                    txtNombre.Text = categorias[0].NombreCategoria;
-                    txtDescripcion.Text = categorias[0].Descripcion;
-                }
-            }
+            viewModel = new ManCategoriaViewModel();
+            this.DataContext = viewModel;
         }
 
         private void btnGrabar_Click(object sender, RoutedEventArgs e)
@@ -62,7 +52,7 @@ namespace Semana06
 
                 Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Comunicarse con el Administrador");
             }
